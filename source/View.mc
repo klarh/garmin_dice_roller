@@ -20,7 +20,7 @@ class DiceView extends WatchUi.View {
         // radius to place non-central shapes at
         var radius = width*0.333;
 
-        self.dice_coords[0] = [width/2, width/2];
+        self.dice_coords[0] = [width/2, height/2];
 
         var x, y, theta;
         for(var i = 0; i < 6; i++) {
