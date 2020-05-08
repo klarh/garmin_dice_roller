@@ -1,11 +1,13 @@
 
 class RandomStream {
     protected var a;
+    protected var aprime;
     protected var m;
     protected var state;
 
-    function initialize(seed, a, m) {
+    function initialize(seed, a, m, aprime) {
         self.a = a;
+        self.aprime = aprime;
         self.m = m;
         self.state = seed.toLong();
     }
@@ -19,8 +21,14 @@ class RandomStream {
         return self.state;
     }
 
+    function step_back() {
+        self.state = (self.aprime*self.state)%self.m;
+        return self.state;
+    }
+
     function randint(maxval) {
         var state = self.step();
+
         if(state >= (state + self.m - 1)/self.m*self.m) {
             return self.randint(maxval);
         }
@@ -29,6 +37,6 @@ class RandomStream {
     }
 
     static function default_v1(seed) {
-        return new RandomStream(seed, 1583458089, 2147483647);
+        return new RandomStream(seed, 1583458089, 2147483647, 1132489760);
     }
 }

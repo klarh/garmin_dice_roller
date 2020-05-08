@@ -30,7 +30,18 @@ class DiceDelegate extends WatchUi.BehaviorDelegate {
         WatchUi.requestUpdate();
     }
 
-    function onMenu() {
+    function onPreviousMode() {
+        for(var i = 0; i < 14; i++) {
+            random_stream.step_back();
+        }
+
+        self.onNextMode();
     }
 
+    function onPreviousPage() {
+        return self.onPreviousMode();
+    }
+
+    function onMenu() {
+    }
 }
