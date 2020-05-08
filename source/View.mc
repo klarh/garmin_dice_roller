@@ -44,8 +44,6 @@ class DiceView extends WatchUi.View {
         self.draw_d12(buf_dc, self.dice_coords[5][0], self.dice_coords[5][1], shape_radius);
         self.draw_d20(buf_dc, self.dice_coords[0][0], self.dice_coords[0][1], shape_radius*1.25);
         self.draw_d100(buf_dc, self.dice_coords[6][0], self.dice_coords[6][1], shape_radius*1.25);
-
-        setLayout(Rez.Layouts.MainLayout(dc));
     }
 
     // Called when this View is brought to the foreground. Restore
