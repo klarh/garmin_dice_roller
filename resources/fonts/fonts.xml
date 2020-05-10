@@ -1,0 +1,5 @@
+<fonts>
+  <font id="dice_font_48" filename="dice_font_48.fnt" filter="dDrRcCoOzZiIwW" antialias="true" />
+  <font id="dice_font_72" filename="dice_font_72.fnt" filter="dDrRcCoOzZiIwW" antialias="true" />
+  <font id="dice_font_128" filename="dice_font_128.fnt" filter="dDrRcCoOzZiIwW" antialias="true" />
+</fonts>
