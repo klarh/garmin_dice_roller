@@ -29,6 +29,7 @@ clean:
 run: build/app-${device}.prg
 	./run.sh "$<" ${device}
 
+.PRECIOUS: resources/fonts/dice_font_%.png
 resources/fonts/dice_font_%.png: support/dice_font.tar
 	python support/make_font.py -t support/dice_font.tar -o resources/fonts $*
 
