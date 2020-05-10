@@ -33,4 +33,4 @@ resources/fonts/dice_font_%.png: support/dice_font.tar
 	python support/make_font.py -t support/dice_font.tar -o resources/fonts $*
 
 support/dice_font.tar: support/dice_font.svg
-	$(error Use inkscape to open dice_font.svg and save as .tar)
+	$(error Use inkscape to open support/dice_font.svg and save as .tar)
