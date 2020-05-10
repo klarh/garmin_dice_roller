@@ -13,7 +13,6 @@ function handle_sigint()
 trap handle_sigint SIGINT
 
 sdk/bin/connectiq&
-sleep 3
 
 sdk/bin/monkeydo $@ &
 
