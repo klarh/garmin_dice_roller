@@ -13,7 +13,7 @@ developer_key.der:
 build:
 	mkdir -p $@
 
-build/app-%.prg: build fonts \
+build/app-%.prg: build fonts icons \
 		monkey.jungle sdk developer_key.der \
 		$(shell find source) $(shell find resources)
 	sdk/bin/monkeyc --jungles monkey.jungle --output "$@" --private-key developer_key.der --device $* --warn
@@ -21,7 +21,7 @@ build/app-%.prg: build fonts \
 release:
 	mkdir -p $@
 
-release/app.iq: release fonts \
+release/app.iq: release fonts icons \
 		monkey.jungle sdk developer_key.der \
 		$(shell find source) $(shell find resources)
 	sdk/bin/monkeyc --jungles monkey.jungle --output "$@" --private-key developer_key.der --release --package-app --warn
@@ -45,3 +45,9 @@ resources/fonts/dice_font_%.png: support/dice_font.tar support/make_font.py
 
 support/dice_font.tar: support/dice_font.svg
 	$(error Use inkscape to open support/dice_font.svg and save as .tar)
+
+.PHONY: icons
+icons: resources/drawables/launcher_icon.png
+
+resources/drawables/launcher_icon.png: support/launcher_icon.svg
+	inkscape --export-filename="$@" -w 30 -h 30 "$<"
