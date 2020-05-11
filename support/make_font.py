@@ -1,5 +1,6 @@
 import argparse
 import contextlib
+import math
 import os
 import subprocess
 import tarfile
@@ -50,7 +51,12 @@ def main(args=None):
     args = parser.parse_args(args)
     tile_size = int(args.size)
 
-    font_png = PIL.Image.new('L', (512, 512))
+    tiles_per_row = int(math.ceil(math.sqrt(len(glyph_chars))))
+    num_rows = (len(glyph_chars) + tiles_per_row - 1)//tiles_per_row
+    image_width = tiles_per_row*tile_size
+    image_height = num_rows*tile_size
+
+    font_png = PIL.Image.new('L', (image_width, image_height))
 
     fnt_lines = []
     fnt_lines.append('info face="dice_glyphs_{}" size={} bold=0 italic=0 '
