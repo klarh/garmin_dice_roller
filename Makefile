@@ -13,10 +13,7 @@ developer_key.der:
 build:
 	mkdir -p build
 
-build/app-%.prg: build \
-		resources/fonts/dice_font_48.png \
-		resources/fonts/dice_font_72.png \
-		resources/fonts/dice_font_128.png \
+build/app-%.prg: build fonts \
 		monkey.jungle sdk developer_key.der \
 		$(shell find source) $(shell find resources)
 	sdk/bin/monkeyc --jungles monkey.jungle --output "$@" --private-key developer_key.der --device $* --warn
@@ -28,6 +25,11 @@ clean:
 .PHONY: run
 run: build/app-${device}.prg
 	./run.sh "$<" ${device}
+
+.PHONY: fonts
+fonts: resources/fonts/dice_font_48.png \
+	resources/fonts/dice_font_72.png \
+	resources/fonts/dice_font_128.png
 
 .PRECIOUS: resources/fonts/dice_font_%.png
 resources/fonts/dice_font_%.png: support/dice_font.tar support/make_font.py
