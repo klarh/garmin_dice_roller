@@ -11,16 +11,24 @@ developer_key.der:
 	$(error Need to run "ln -s <key_file> developer_key.der")
 
 build:
-	mkdir -p build
+	mkdir -p $@
 
 build/app-%.prg: build fonts \
 		monkey.jungle sdk developer_key.der \
 		$(shell find source) $(shell find resources)
 	sdk/bin/monkeyc --jungles monkey.jungle --output "$@" --private-key developer_key.der --device $* --warn
 
+release:
+	mkdir -p $@
+
+release/app.iq: release fonts \
+		monkey.jungle sdk developer_key.der \
+		$(shell find source) $(shell find resources)
+	sdk/bin/monkeyc --jungles monkey.jungle --output "$@" --private-key developer_key.der --release --package-app --warn
+
 .PHONY: clean
 clean:
-	rm -rf build
+	rm -rf build release
 
 .PHONY: run
 run: build/app-${device}.prg
