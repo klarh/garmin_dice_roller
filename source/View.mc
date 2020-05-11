@@ -102,25 +102,25 @@ class DiceView extends WatchUi.View {
 
         dc.setColor(Graphics.COLOR_WHITE, Graphics.COLOR_TRANSPARENT);
         dc.drawText(self.dice_coords[0][0], self.dice_coords[0][1],
-                    Graphics.FONT_MEDIUM, self.dice_values[:d20].format("%u"),
+                    Graphics.FONT_NUMBER_MEDIUM, self.dice_values[:d20].format("%u"),
                     centering);
         dc.drawText(self.dice_coords[1][0], self.dice_coords[1][1],
-                    Graphics.FONT_MEDIUM, self.dice_values[:d4].format("%u"),
+                    Graphics.FONT_NUMBER_MEDIUM, self.dice_values[:d4].format("%u"),
                     centering);
         dc.drawText(self.dice_coords[2][0], self.dice_coords[2][1],
-                    Graphics.FONT_MEDIUM, self.dice_values[:d6].format("%u"),
+                    Graphics.FONT_NUMBER_MEDIUM, self.dice_values[:d6].format("%u"),
                     centering);
         dc.drawText(self.dice_coords[3][0], self.dice_coords[3][1],
-                    Graphics.FONT_MEDIUM, self.dice_values[:d8].format("%u"),
+                    Graphics.FONT_NUMBER_MEDIUM, self.dice_values[:d8].format("%u"),
                     centering);
         dc.drawText(self.dice_coords[4][0], self.dice_coords[4][1],
-                    Graphics.FONT_MEDIUM, self.dice_values[:d10].format("%u"),
+                    Graphics.FONT_NUMBER_MEDIUM, self.dice_values[:d10].format("%u"),
                     centering);
         dc.drawText(self.dice_coords[5][0], self.dice_coords[5][1],
-                    Graphics.FONT_MEDIUM, self.dice_values[:d12].format("%u"),
+                    Graphics.FONT_NUMBER_MEDIUM, self.dice_values[:d12].format("%u"),
                     centering);
         dc.drawText(self.dice_coords[6][0], self.dice_coords[6][1],
-                    Graphics.FONT_MEDIUM, self.dice_values[:d100].format("%u"),
+                    Graphics.FONT_NUMBER_MEDIUM, self.dice_values[:d100].format("%u"),
                     centering);
     }
 
