@@ -1,4 +1,5 @@
 
+// Simple reversible linear congruential random number generator.
 class RandomStream {
     protected var a;
     protected var aprime;
@@ -45,6 +46,10 @@ class RandomStream {
         return state%maxval;
     }
 
+    // Take good values from "Tables of Linear Congruential Generators
+    // of Different Size and Good Lattice Structure," Pierre
+    // L'Ecuyere, Mathematics of Computation,
+    // 1999. https://doi.org/10.1090%2FS0025-5718-99-00996-5
     static function default_v1(seed) {
         return new RandomStream(seed, 1583458089, 2147483647, 1132489760);
     }
