@@ -26,6 +26,7 @@
       <iq:product id="edge_1000"/>
       <iq:product id="edge_520"/>
       <iq:product id="edgeexplore"/>
+      <iq:product id="epix"/>
       <iq:product id="fenix5"/>
       <iq:product id="fenix5plus"/>
       <iq:product id="fenix5s"/>
@@ -60,6 +61,7 @@
       <iq:product id="oregon7xx"/>
       <iq:product id="rino7xx"/>
       <iq:product id="venu"/>
+      <iq:product id="vivoactive"/>
       <iq:product id="vivoactive3"/>
       <iq:product id="vivoactive3d"/>
       <iq:product id="vivoactive3m"/>
