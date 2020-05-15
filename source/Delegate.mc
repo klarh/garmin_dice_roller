@@ -37,6 +37,8 @@ class DiceDelegate extends WatchUi.BehaviorDelegate {
         self.view.dice_values[:d100] = 1 + random_stream.randint(100, true);
         self.last_forward = true;
         WatchUi.requestUpdate();
+
+        return true;
     }
 
     function onPreviousMode() {
@@ -55,6 +57,8 @@ class DiceDelegate extends WatchUi.BehaviorDelegate {
         self.view.dice_values[:d4] = 1 + random_stream.randint(4, false);
         self.last_forward = false;
         WatchUi.requestUpdate();
+
+        return true;
     }
 
     function onPreviousPage() {
