@@ -26,6 +26,11 @@ release/app.iq: release fonts icons \
 		$(shell find source) $(shell find resources)
 	sdk/bin/monkeyc --jungles monkey.jungle --output "$@" --private-key developer_key.der --release --package-app --warn
 
+release/app-%.prg: release fonts icons \
+		monkey.jungle sdk developer_key.der \
+		$(shell find source) $(shell find resources)
+	sdk/bin/monkeyc --jungles monkey.jungle --output "$@" --private-key developer_key.der --device $* --warn --release
+
 .PHONY: clean
 clean:
 	rm -rf build release
